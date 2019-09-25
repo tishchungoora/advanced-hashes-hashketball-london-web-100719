@@ -198,13 +198,11 @@ end
 
 def long_name_steals_a_ton?
   longest_name = player_with_longest_name
+  highest_scorer = most_points_scored
   result = false
   
-  game_hash.each do |location, team_data|
-    team_data[:players].each do |person_name, data|
-    
-    end  
+  if longest_name == highest_scorer
+    result = true
   end
-  
-  
+  result
 end
