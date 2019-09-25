@@ -177,11 +177,7 @@ def winning_team
   (game_hash[:away][:players]).each do |person_name, data|
       away_score += data[:points]
     end
-  
-  team_scores = {
-    home_team => home_score,
-    away_team => away_score
-  }
+  team_scores = {home_team => home_score, away_team => away_score}
 end
 
 winning_team
