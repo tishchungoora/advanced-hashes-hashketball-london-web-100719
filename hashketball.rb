@@ -177,7 +177,7 @@ def winning_team
   
   game_hash.each do |location, team_data|
     team_data[:players].each do |person_name, data|
-      player_points = player_points.merge({person_name => data[:points]})
+      home_score += data[:points]
     end
   end
   
