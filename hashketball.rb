@@ -145,3 +145,72 @@ def big_shoe_rebounds
   end
   num_rebound
 end
+
+
+### Find the player who scores the most points
+
+def most_points_scored
+  player_points = {}
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      player_points = player_points.merge({person_name => data[:points]})
+    end
+  end
+  highest_scorer = player_points.max_by { |player, score| score }[0]
+end
+
+
+### Find the team that has the most points
+
+def winning_team
+  home_score = 0
+  home_team = game_hash[:home][:team_name]
+  away_score = 0
+  away_team = game_hash[:away][:team_name]
+  
+  (game_hash[:home][:players]).each do |person_name, data|
+      home_score += data[:points]
+    end
+  (game_hash[:away][:players]).each do |person_name, data|
+      away_score += data[:points]
+    end
+  team_scores = {home_team => home_score, away_team => away_score}
+  highest_scoring_team = team_scores.max_by { |team, score| score }[0]
+end
+
+
+### Find the player with the longest name
+
+def player_with_longest_name
+  players = []
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      players = players.push(person_name)
+    end
+  end
+  longest_name = players.max_by(&:length)
+end
+
+
+### If the player with the longest name had the most steals, return TRUE
+
+def long_name_steals_a_ton?
+  longest_name = player_with_longest_name
+  result = false
+  player_steals = {}
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      player_steals = player_steals.merge({person_name => data[:steals]})
+    end
+  end
+  highest_stealer = player_steals.max_by { |player, steals| steals }[0]
+  
+  if longest_name == highest_stealer
+    result = true
+  else
+    result
+  end
+end
