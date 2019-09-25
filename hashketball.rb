@@ -180,3 +180,14 @@ def winning_team
   highest_scoring_team = team_scores.max_by { |team, score| score }[0]
 end
 
+def player_with_longest_name
+  players =[]
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      players = players.push(person_name)
+    end
+  end
+  
+  
+end
