@@ -175,7 +175,6 @@ def winning_team
   (game_hash[:away][:players]).each do |person_name, data|
       away_score += data[:points]
     end
-    
   team_scores = {home_team => home_score, away_team => away_score}
   highest_scoring_team = team_scores.max_by { |team, score| score }[0]
 end
@@ -191,7 +190,6 @@ def player_with_longest_name
       players = players.push(person_name)
     end
   end
-  
   longest_name = players.max_by(&:length)
 end
 
@@ -201,5 +199,12 @@ end
 def long_name_steals_a_ton?
   longest_name = player_with_longest_name
   result = false
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+    
+    end  
+  end
+  
   
 end
