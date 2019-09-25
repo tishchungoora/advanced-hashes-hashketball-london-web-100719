@@ -155,5 +155,8 @@ def most_points_scored
       player_points = player_points.merge({person_name => data[:points]})
     end
   end
+  
+  player_points.max_by 
+  
   highest_score = highest_score.max_by { |player, score| score }[0]
 end
