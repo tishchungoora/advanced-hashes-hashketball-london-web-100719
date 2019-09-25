@@ -175,10 +175,12 @@ def winning_team
     away_team => away_score
   }
   
-  game_hash.each do |location, team_data|
-    team_data[:players].each do |person_name, data|
+  (game_hash[:home][:players]).each do |person_name, data|
       home_score += data[:points]
     end
-  end
   
+  (game_hash[:away][:players]).each do |person_name, data|
+      away_score += data[:points]
+    end
+  team_scores
 end
