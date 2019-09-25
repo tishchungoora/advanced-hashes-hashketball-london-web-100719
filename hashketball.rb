@@ -165,6 +165,14 @@ end
 ### Find the team that has the most points
 
 def winning_team
-  team_scores = {
+  score_home = nil
+  score_away = nil
+  team_scores = {game_hash[:home][:team_name] => score_home}
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      player_points = player_points.merge({person_name => data[:points]})
+    end
+  end
   
 end
