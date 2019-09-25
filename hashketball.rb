@@ -179,5 +179,3 @@ def winning_team
   team_scores = {home_team => home_score, away_team => away_score}
   highest_scoring_team = team_scores.max_by { |team, score| score }[0]
 end
-
-winning_team
