@@ -198,10 +198,17 @@ end
 
 def long_name_steals_a_ton?
   longest_name = player_with_longest_name
-  highest_scorer = most_points_scored
   result = false
+  player_steals = {}
   
-  if longest_name == highest_scorer
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      player_steals = player_steals.merge({person_name => data[:steals]})
+    end
+  end
+  highest_stealer = player_steals.max_by { |player, steals| steal }[0]
+  
+  if longest_name == highest_stealer
     result = true
   else
     result
