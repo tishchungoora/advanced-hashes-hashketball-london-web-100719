@@ -165,6 +165,6 @@ end
 ### Find the team that has the most points
 
 def winning_team
-  team_scores = {:team_name => nil
+  team_scores = {
   
 end
