@@ -151,7 +151,7 @@ end
 
 def most_points_scored
   player_points = {}
-  highest_scorer = nil
+  #highest_scorer = nil
   
   game_hash.each do |location, team_data|
     team_data[:players].each do |person_name, data|
