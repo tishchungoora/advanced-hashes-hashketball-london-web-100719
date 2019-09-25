@@ -198,3 +198,8 @@ end
 
 ### If the player with the longest name had the most steals, return TRUE
 
+def long_name_steals_a_ton?
+  longest_name = player_with_longest_name
+  result = false
+  
+end
