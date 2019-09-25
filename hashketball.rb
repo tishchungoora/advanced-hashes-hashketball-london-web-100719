@@ -169,6 +169,7 @@ def winning_team
   home_team = game_hash[:home][:team_name]
   away_score = 0
   away_team = game_hash[:away][:team_name]
+  highest_scoring_team = nil
   
   (game_hash[:home][:players]).each do |person_name, data|
       home_score += data[:points]
@@ -179,7 +180,7 @@ def winning_team
     end
     
   team_scores = {home_team => home_score, away_team => away_score}
-  
+  highest_scoring_team = team_scores.max_by { |team, score| score }[0]
 end
 
 winning_team
