@@ -165,9 +165,9 @@ end
 ### Find the team that has the most points
 
 def winning_team
-  home_score = nil
+  home_score = 0
   home_team = game_hash[:home][:team_name]
-  away_score = nil
+  away_score = 0
   away_team = game_hash[:away][:team_name]
   
   team_scores = {
