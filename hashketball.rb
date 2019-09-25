@@ -203,6 +203,7 @@ def long_name_steals_a_ton?
   
   if longest_name == highest_scorer
     result = true
+  else
+    result
   end
-  result
 end
