@@ -187,3 +187,5 @@ def winning_team
   team_scores
   binding.pry
 end
+
+winning_team
