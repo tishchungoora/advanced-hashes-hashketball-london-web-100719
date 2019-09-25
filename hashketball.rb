@@ -146,6 +146,9 @@ def big_shoe_rebounds
   num_rebound
 end
 
+
+### Find the player who scores the most points
+
 def most_points_scored
   player_points = {}
   highest_scorer = nil
@@ -156,4 +159,12 @@ def most_points_scored
     end
   end
   highest_scorer = player_points.max_by { |player, score| score }[0]
+end
+
+
+### Find the team that has the most points
+
+def winning_team
+  team_scores = {:team_name => nil
+  
 end
