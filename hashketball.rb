@@ -206,7 +206,7 @@ def long_name_steals_a_ton?
       player_steals = player_steals.merge({person_name => data[:steals]})
     end
   end
-  highest_stealer = player_steals.max_by { |player, steals| steal }[0]
+  highest_stealer = player_steals.max_by { |player, steals| steals }[0]
   
   if longest_name == highest_stealer
     result = true
