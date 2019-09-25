@@ -147,5 +147,13 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
-  player_points = 
+  player_points = {}
+  highest_score = nil
+  
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |person_name, data|
+      player_points = player_points.merge({person_name => data[:points]})
+    end
+  end
+  highest_score = highest_scores.max_by { |player, score| score }[0]
 end
