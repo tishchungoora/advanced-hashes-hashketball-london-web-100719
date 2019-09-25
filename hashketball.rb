@@ -177,15 +177,12 @@ def winning_team
   
   (game_hash[:home][:players]).each do |person_name, data|
       home_score += data[:points]
-      binding.pry
     end
   
   (game_hash[:away][:players]).each do |person_name, data|
       away_score += data[:points]
-      binding.pry
     end
   team_scores
-  binding.pry
 end
 
 winning_team
