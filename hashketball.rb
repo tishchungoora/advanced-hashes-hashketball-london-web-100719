@@ -180,8 +180,11 @@ def winning_team
   highest_scoring_team = team_scores.max_by { |team, score| score }[0]
 end
 
+
+### Find the player with the longest name
+
 def player_with_longest_name
-  players =[]
+  players = []
   
   game_hash.each do |location, team_data|
     team_data[:players].each do |person_name, data|
